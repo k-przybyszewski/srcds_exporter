@@ -19,7 +19,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "prom-client": "^11.5.3",
-    "srcds-rcon": "^2.2.1",
     "working-rcon": "^0.2.8"
   },
   "devDependencies": {}
