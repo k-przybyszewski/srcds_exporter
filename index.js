@@ -17,7 +17,7 @@ function csgoRequest(response, res){
     players.set((Number(response[6])));
     svms.set((Number(response[7])));
     varms.set((Number(response[8])));
-    tick.set((Number(response[9])));
+    tick.set((Number(response[9] || -1)));
     res.end(csgoRegistry.metrics());
 }
 
@@ -49,9 +49,7 @@ async function getStats(ip, port, password, game) {
     }
     if (game === "csgo"){
         var resultArray = result.split(/\r?\n/);
-        resultArray.pop();
-        resultArray.shift();
-        var finalArray = resultArray[0].split(/\s+/);
+        var finalArray = resultArray[1].split(/\s+/);
         finalArray.shift();
         return finalArray;
     } else if (game === "gmod") {
